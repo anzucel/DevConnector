@@ -30,7 +30,7 @@ async (req, res) => {
     const errors = validationResult(req); // devuelve un array
 
     if(!errors.isEmpty()){ // si hay errores
-        return res.status(400).json({errors: errors.array()});
+        return res.status(400).json({errors: errors.array()}); // si hay error, termina
     }
 
     // información del body 
@@ -63,7 +63,7 @@ async (req, res) => {
          user.password = await bcrypt.hash(password, salt);
 
          // todo lo que devuelve una promesa es await
-         await user.save();
+         await user.save(); // guarda en la bd 
 
         // retornar jsonwebtoken
          const payload = {
