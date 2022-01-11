@@ -15,7 +15,7 @@ export default function(state = initialState, action){
 
     switch(type){
         case SET_ALERT:
-            return [...state, payload];
+            return [...state, payload]; // add the alert to the state
         case REMOVE_ALERT:
             //remove by id
             return state.filter(alert => alert.id !== payload); //payload in this case is ID 

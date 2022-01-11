@@ -18,12 +18,12 @@ router.get('/', (req, res) => res.send('User route'));
 //@access   Public -- no se necesita autenticación
 router.post('/',[
     // validaciones en el post
-    check('name', 'Nombre es obligatorio')
+    check('name', 'Name is required')
         .not()
         .isEmpty(),
-    check('email', 'Agregar un correo válido')
+    check('email', 'Include a valid email')
         .isEmail(),
-    check('password', 'Ingresa una contraseña con 6 o más caracteres')
+    check('password', 'Enter a password with 6 or more characters')
         .isLength({min: 6})
 ],
 async (req, res) => {
